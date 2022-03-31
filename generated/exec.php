@@ -115,7 +115,7 @@ function shell_exec(string $command): string
 {
     error_clear_last();
     $result = \shell_exec($command);
-    if ($result === null) {
+    if ($result === false) {
         throw ExecException::createFromPhpError();
     }
     return $result;
